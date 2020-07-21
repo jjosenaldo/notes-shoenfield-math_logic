@@ -1,0 +1,59 @@
+\section{The Nature of Mathematical Logic}
+
+\subsection{Formal System}
+
+\begin{definition}[Formal System]
+A \emph{formal system} $F$ is roughly the syntactical part of an axiom system. It is composed of:
+\begin{enumerate}
+    \item A \emph{language}, made up of symbols and formulas. It is denoted as $L(F)$.
+    \item \emph{Axioms}, which must be formulas.
+    \item \emph{Rules of inference} (or just \emph{rules}), which state that a formula (\emph{conclusion})
+    may be inferred from other formulas (\emph{hypotheses}).
+\end{enumerate}    
+\end{definition}
+
+\begin{definition}[Theorem]
+    The set of \emph{theorems} of a formal system is defined by:
+    \begin{enumerate}
+        \item The axioms are theorems.
+        \item If the hypotheses of a rule are theorems, its conclusion is a theorem.
+    \end{enumerate}
+    We write $\thm_F$ as an abbreviation for \emph{\dots is a theorem of $F$}, and omit 
+    the subscript if there is no confusion.
+\end{definition}
+
+\begin{definition}[Finite Rule]
+    A rule in a formal system is \emph{finite} if it has finitely many hypotheses.
+\end{definition}
+
+\begin{fact}
+    Inductively defined sets have a ``natural'' associated induction principle.
+\end{fact}
+
+\begin{definition}[Proof]
+    Let $F$ be a formal system in which all rules are finite. A \emph{proof} in $F$ is a finite sequence
+    of formulas, each of which is either an axiom or is the conclusion of a rule whose hypotheses 
+    precede that formula in the proof. If $A$ is the last formula in a proof $P$, we say that
+    $F$ is a \emph{roof of $A$}. 
+\end{definition}
+
+\begin{fact}
+    A formula $A$ is a theorem in a formal system $F$ iff there is a proof of $A$ in $F$.
+\end{fact}
+
+\begin{definition}[Defined Symbols; Defined Formulas]
+    The \emph{defined symbols} of a formal system $F$, which are not a part of $L(F)$, are
+    combined with the symbols of $F$ to form expressions called \emph{defined formulas}.
+    Defined formulas are abbreviations of formulas of $F$. Also, the length of a defined formula
+    is the length of the formula it abbreviates.
+\end{definition}
+
+\begin{definition}[Syntactical Variable]
+    \emph{Syntactical variables} vary through the expressions of the language under discussion.
+    A formula with syntactical variables asserts a scheme of meanings.
+\end{definition}
+
+\begin{convention}
+    Boldface letters are syntactival variables. In particular, \textbf{u} and \textbf{v}
+    vary through all expressions, and \textbf{A}, \textbf{B} and \textbf{C} vary through formulas.
+\end{convention}

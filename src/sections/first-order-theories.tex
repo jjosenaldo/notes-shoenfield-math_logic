@@ -1,0 +1,127 @@
+\section{First-order Theories}
+
+\subsection{Functions and Predicates}
+
+\begin{definition}[``Universe'']
+	A \emph{``universe''} is some special set in a mathematical axiom system.
+\end{definition}
+
+\begin{definition}[Individual Functions; Individual Predicates]
+	Functions from the universe to the universe are called \emph{individual functions}, and predicates
+	in the universe are called \emph{individual predicates}.
+\end{definition}
+
+\subsection{Truth Functions}
+
+\begin{definition}[Truth Value]
+	Truth values are objects \textbf{T} and \textbf{F} different from each other.
+\end{definition}
+
+\begin{definition}[Truth Function]
+	A \emph{truth function} is a function from the set of truth values to the set of truth values.
+\end{definition}
+
+\section{Variables and Quantifiers}
+
+\begin{definition}[Individual Variables]
+	\emph{Individual variables} vary on the individuals of the universe. They will be often
+	referred to as just \emph{variables}.
+\end{definition}
+
+\begin{remark}
+	The need for a universal quantifier can be seen when one tries to translate 
+	``not all natural numbers are equal to 0'' into a formula. Also, while $x=0$ has many
+	meanings, the formula $\forall x (x=0)$ has only one meaning.
+\end{remark}
+
+\begin{remark}
+	If $\forall x$ or $\exists x$ is introduced in a formula with no free occurrences of $x$,
+	the meaning of the formula is unchanged.
+\end{remark}
+
+\subsection{First-order Languages}
+
+\begin{definition}[Symbols of a First-order Language; Constant; Logical and Lonlogical Symbol]
+	The symbols of a first-order language consist of:
+	\begin{enumerate}
+		\item The variables $x$, $y$, $z$, $w$, $x'$, $y'$, $z'$, $w'$, $x''$, $\dots$.
+		\item For each $n \in \nats$, the \emph{$n$-ary function symbols} and the 
+		\emph{$n$-ary predicate symbols}.
+		\item The symbols $\lnot$, $\lor$ and $\exists$.
+	\end{enumerate}
+	The \emph{equality symbol} $=$ is contained in the set of 2-ary predicate symbols.
+
+	A \emph{constant} is a 0-ary function symbol.
+
+	A function or predicate symbol other than $=$ is called a \emph{nonlogical symbol}. Otherwise,
+	it is a \emph{logical symbol}.
+\end{definition}
+
+\begin{convention}
+	The syntactical variables \synt{x}, \synt{y}, \synt{z} and \synt{w} vary through
+	variables; \synt{f} and \synt{g} vary through function symbols; \synt{p} and \synt{q}
+	vary through predicate symbols and \synt{e} varies through constants.
+\end{convention}
+
+\begin{definition}[Term]
+	The \emph{terms} are defined by:
+	\begin{enumerate}
+		\item Variables are terms.
+		\item If \synt{u}$_1$, \dots, \synt{u}$_n$ are terms and \synt f is a $n$-ary function
+		symbol, then \synt f\synt u$_1$\dots\synt u$_n$ is a term.
+	\end{enumerate}
+	The syntactical variables \synt{a}, \synt{b}, \synt{c} and \synt{d} vary through
+	terms.
+\end{definition}
+
+\begin{definition}[(Atomic) Formula]
+	The \emph{formulas} are defined by:
+	\begin{enumerate}
+		\item If \synt p is $n$-ary, then \synt p\synt a$_1$\dots\synt a$_n$ is a formula.
+		It is also called an \emph{atomic formula}.
+		\item If \synt u is a formula, then $\lnot$\synt u is a formula.
+		\item If \synt u and \synt v are formulas, then $\lor$\synt u\synt v is a formula.
+		\item If \synt u is a formula, then $\exists$\synt x\synt u is a formula.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Height of a Formula]
+	The \emph{height} of a formula \synt u is the number of occurrences of $\lnot$,
+	$\lor$ and $\exists$ in \synt u.
+\end{definition}
+
+\begin{definition}[First-order Language]
+	A \emph{first-order language} is a language whose symbols and formulas are as
+	described previously.
+\end{definition}
+
+\begin{remark}
+	A first-order language is defined by its nonlogical symbols. In particular,
+	if a symbol is used as a $n$-ary function (predicate) symbol in one 
+	first-order language, it can only be used in other first-order languages
+	as a $n$-ary function (predicate) symbol.
+\end{remark}
+
+\begin{definition}[Designator; Index of a Symbol]
+	A \emph{designator} is an expression which is either a formula or a term.
+	Every designator has the form \synt u\synt v$_1$\dots\synt v$_n$, where
+	\synt u is a symbol, \synt v$_1$, \dots, \synt v$_n$ are designators and 
+	$n$ is determined by \synt u. We call $n$ the \emph{index} of \synt u.
+\end{definition}
+
+\begin{definition}[Compatible Expressions]
+	Two expressions are \emph{compatible} when one of them is a prefix
+	of the other.
+\end{definition}
+
+\begin{fact}
+	If \synt{uv} and \synt{u$'$v$'$} are compatible, then \synt u and \synt{u$'$} are
+	compatible. If \synt{uv} and \synt{uv$'$} are compatible, then \synt v
+	and \synt{v$'$} are compatible.
+\end{fact}
+
+\begin{lemma}
+	If \synt u$_1$, \dots, \synt u$_n$, \synt{u'}$_1$, \dots, \synt{u'}$_n$ are designators
+	and \synt u$_1$\dots\synt u$_n$ and \synt{u'}$_1$\dots\synt{u'}$_n$ are compatible,
+	then each \synt u$_i$ $=$ \synt{u'}$_i$ for each $1 \le i \le n$.
+\end{lemma}

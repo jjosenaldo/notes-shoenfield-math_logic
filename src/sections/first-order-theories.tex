@@ -125,3 +125,55 @@
 	and \synt u$_1$\dots\synt u$_n$ and \synt{u'}$_1$\dots\synt{u'}$_n$ are compatible,
 	then each \synt u$_i$ $=$ \synt{u'}$_i$ for each $1 \le i \le n$.
 \end{lemma}
+
+\begin{theorem}[Formation Theorem]
+	Every designator can be written in the form \synt u \synt v$_1$\dots\synt v$_n$, 
+	where \synt u is a symbol of index $n$, and \synt v$_1$, \dots, \synt v$_n$ are designators,
+	in only one way.
+\end{theorem}
+
+\begin{lemma}
+	Every occurrence of a symbol in a designator \synt u begins an occurrence of a designator
+	in \synt u.
+\end{lemma}
+
+\begin{theorem}[Occurrence Theorem]
+	Let \synt u be a symbol of index $n$, and let \synt v$_1$, \dots, \synt v$_n$
+	be designators. Then any occurrence of a designator \synt v in 
+	\synt u\synt v$_1$\dots\synt v$_n$ is either all of \synt u\synt v$_1$\dots\synt v$_n$
+	or a part of one of the \synt v$_i$.
+\end{theorem}
+
+\begin{definition}[Free and Bound Occurrences]
+	An occurrence of \synt x in \synt A is \emph{bounded in \synt A} if it occurs in a part
+	of \synt A of the form $\exists$\synt x\synt B; otherwise, it is \emph{free} on \synt A.
+	We say that \synt x is \emph{free (bound) in \synt A} if some occurrence of \synt x
+	is free (bound) in \synt A.
+\end{definition}
+
+\begin{fact}
+	If \synt y is distinct from \synt x, then the free occurrences of \synt x in $\lnot$\synt A,
+	$\lor$\synt{AB} and $\exists$\synt{yA} are just the free occurrences of \synt x in \synt A
+	and \synt B.
+\end{fact}
+
+\begin{definition}[Substituibleness]
+	We say that \synt a is \emph{substituible} for \synt x in \synt A when for each
+	variable \synt y occurring in \synt a, no part of \synt A of the form $\exists$\synt{yB}
+	contains an occurrence of \synt x which is free in \synt A.
+\end{definition}
+
+\begin{convention}
+	We use \subs{\synt a}{\synt x}{\synt b} to designated the expression obtained from \synt b
+	replacing each occurrence of \synt x by \synt a; and we use \subs{\synt a}{\synt x}{\synt A}
+	to designate the expression obtained from \synt A by replacing each free occurrence of \synt x
+	by \synt a.
+\end{convention}
+
+\begin{fact}
+	The expressions \subs{\synt a}{\synt x}{\synt b} and \subs{\synt a}{\synt x}{\synt A}
+	are indeed a term and a formula, respectively.
+\end{fact}
+
+% The formulas containing the connectives \&, \to and \forall and the infix versions of 
+% binary connectives/formulas/predicates are abbreviations

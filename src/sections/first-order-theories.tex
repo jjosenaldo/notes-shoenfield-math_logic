@@ -177,3 +177,81 @@
 
 % The formulas containing the connectives \&, \to and \forall and the infix versions of 
 % binary connectives/formulas/predicates are abbreviations
+
+\subsection{Structures}
+
+\begin{definition}[Structure]
+	Let $L$ be a first-order language. A \emph{structure} $\struct$ for $L$ consists of the following:
+	\begin{enumerate}
+		\item A nonempty set $\pipe\struct$, called the \emph{universe} of $\struct$.
+		The elements of $\universe\struct$ are called the \emph{individuals} of $\struct$.
+		\item For each $n$-ary function symbol \synt f of $L$, an $n$-ary function
+		\synt f$_\struct$ from $\universe\struct$ to $\universe\struct$.
+		\item For each $n$-ary predicate symbol \synt p of $L$ other than =,
+		an $n$-ary predicate \synt p$_\struct$ in $\universe\struct$. 
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Names of Individuals]
+	Let $\struct$ be a structure for $L$. For each individual $a$ of $\struct$,
+	we choose a new constant, called the \emph{name} of $a$, such that each individual
+	is assigned a different name. The language obtained by adding those names is 
+	designated by $L(\struct)$. The syntactical variables \synt i and \synt j vary
+	through names.
+\end{definition}
+
+\begin{definition}[Variable-free Expression]
+	An expression is \emph{variable-free} if it contains no variables.
+\end{definition}
+
+\begin{definition}[$\struct(\msynt a)$]
+	Let \synt a be a variable-free term of $L(\struct)$. If \synt is a name, then
+	$\struct$(\synt a) is the individual of which \synt a is the name. Otherwise,
+	\synt a must be \synt f \synt a$_1$\dots\synt a$_n$ with \synt f a function
+	symbol of $L$. We then let $\struct(\msynt a)$ be 
+	$\msynt f_\struct(\struct(\msynt a_1), \dots, \struct(\msynt a_n))$.
+\end{definition}
+
+\begin{remark}
+	The previous definition makes sense because of the Formation Theorem.
+\end{remark}
+
+\begin{definition}[Closed Formula]
+	A formuça \synt A is \emph{closed} if there is no free variable in \synt A.
+\end{definition}
+
+\begin{definition}[$\struct(\msynt A)$]
+	Let \synt A be a closed formula in $L(\struct)$. If \synt A is $\msynt a = \msynt b$,
+	then \[\struct(\msynt A) = \mtrue \tiff \struct(\msynt a)=\struct(\msynt b)\]
+
+	If \synt A is $\msynt p \msynt a_1 \dots \msynt a_n$, where \synt p is not =,
+	we let 
+	\[\struct(\msynt A) = \mtrue \tiff \msynt p_\struct\paren{\struct(\msynt a_1),\dots,\struct(\msynt a_1)}\]
+	If \synt A is $\lnot \msynt B$, then $\struct(\msynt  A)$ is
+	$H_\lnot\paren{\struct(\msynt B)}$. If \synt A is $\msynt B \lor \msynt C$, then
+	$\struct(\msynt  A)$ is $H_\lor\paren{\struct(\msynt B),\struct(\msynt C)}$.
+	If \synt A is $\exists \msynt{xB}$, then $\struct(\msynt A) = \mtrue$ iff 
+	$\struct(\msubs{\msynt i}{\msynt x}{\msynt B})=\mtrue$ for some \synt i in
+	$L(\struct)$.
+\end{definition}
+
+\begin{definition}[$\struct$-instance of a Formula]
+	If \synt A is a formula of $L$, an \emph{$\struct$-instance} of \synt A
+	is a closed formula of the form
+	$\msubs{\msynt i_1,\dots,\msynt i_n}{}{\msynt A}$ in $L(\struct)$.
+\end{definition}
+
+\begin{definition}[Valid Formula]
+	A formula \synt A of $L$ is \emph{valid} in $\struct$ if $\struct(\msynt A')=\mtrue$
+	for every $\struct$-instance $\msynt A'$ of \synt A.
+\end{definition}
+
+\begin{lemma}
+	Let $\struct$ be a structure for $L$; \synt a a variable-free term in
+	$L(\struct)$; \synt i the name of $\struct(\msynt a)$. If \synt b is a term 
+	of $L(\struct)$ in which no variable except \synt x occurs, then
+	$\struct(\msubs{\msynt x}{\msynt a}{\msynt b}) = \struct(\msubs{\msynt x}{\msynt i}{\msynt b})$.
+	If \synt A is a formula of $L(\struct)$ in which no variable except \synt x
+	is free, then
+	$\struct(\msubs{\msynt x}{\msynt a}{\msynt A}) = \struct(\msubs{\msynt x}{\msynt i}{\msynt A})$.
+\end{lemma}

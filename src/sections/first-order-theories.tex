@@ -255,3 +255,49 @@
 	is free, then
 	$\struct(\msubs{\msynt x}{\msynt a}{\msynt A}) = \struct(\msubs{\msynt x}{\msynt i}{\msynt A})$.
 \end{lemma}
+
+\subsection{Logical Axioms and Rules}
+
+\begin{definition}[Logical Consequence]
+	We say that \synt A is a \emph{logical consequence} of a set $\Gamma$ of formulas 
+	if \synt A is valid in every structure in which all formulas of $\Gamma$ are valid.
+\end{definition}
+
+\begin{definition}[Logical Axiom]
+	Let $L$ be a first-order language. A \emph{propositional axiom} is a formula
+	of the form $\msynt A \lor \lnot \msynt A$. A \emph{substitution axiom} is a
+	formula of the form $\msubs{\msynt a}{\msynt x}{\msynt A}\to \exists \msynt x \msynt A$.
+	An \emph{identity axiom} is a formula of the form $\msynt x = \msynt x$. An
+	\emph{equality axiom} is a formula of the form
+	\[\msynt x_1 = \msynt y_1\to\dots\to\msynt x_n = \msynt y_n\to
+	\msynt f\msynt x_1\dots\msynt x_n=\msynt f\msynt y_1\dots\msynt y_n\]
+	or of the form
+	\[\msynt x_1 = \msynt y_1\to\dots\to\msynt x_n = \msynt y_n\to
+	\msynt p\msynt x_1\dots\msynt x_n\to\msynt p\msynt y_1\dots\msynt y_n\]
+
+	A \emph{logical axiom} is a formula which is a propositional axiom, a 
+	substitution axiom, an identity axiom or an equality axiom.
+\end{definition}
+
+\begin{fact}
+	The logical axioms of a language $L$ are valid in any structure for $L$.
+\end{fact}
+
+\begin{definition}[Rules of Inference of First-Order Logic]
+	The \emph{rules of inference} are the following:
+	\begin{description}
+		\item[Expansion Rule] Infer $\msynt B \lor \msynt A$ from \synt A.
+		\item[Contraction Rule] Infer \synt A from $\msynt A \lor \msynt A$.
+		\item [Associative Rule] Infer $(\msynt A \lor \msynt B)\lor \msynt C$
+		from $\msynt A \lor (\msynt B\lor \msynt C)$.
+		\item [Cut Rule] Infer $\msynt B \lor \msynt C$ from 
+		$\msynt A \lor \msynt B$ and $\lnot \msynt A \lor \msynt C$.
+		\item [$\exists$-introduction Rule] If $\msynt x$ is not free on
+		\synt B, then infer $\exists\msynt{xA}\to\msynt B$ from 
+		$\msynt A \to\msynt B$.
+	\end{description}
+\end{definition}
+
+\begin{fact}
+	For each rule, its conclusion is a logical consequence of its hypotheses.
+\end{fact}

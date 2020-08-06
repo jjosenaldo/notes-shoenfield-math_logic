@@ -301,3 +301,28 @@
 \begin{fact}
 	For each rule, its conclusion is a logical consequence of its hypotheses.
 \end{fact}
+
+\begin{definition}[(First-Order) Theory]
+	A \emph{(first-order) theory} is a formal system $T$ such that:
+	\begin{enumerate}
+		\item the language of $T$ is a first-order language;
+		\item the axioms of $T$ are the logical axioms of $L(T)$ plus
+		a set of nonlogical axioms;
+		\item the rules of inference of $T$ are the rules of first-order
+		logic.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Model (of a Theory)]
+	A \emph{model} of a theory $T$ is a structure for $L(T)$ in which
+	all the nonlogical axioms of $T$ are valid.
+\end{definition}
+
+\begin{definition}[Formula Valid in a Theory]
+	A formula is \emph{valid} in a theory $T$ if it is valid for every
+	model of $T$.
+\end{definition}
+
+\begin{theorem}[Validity Theorem]
+	If $T$ is a theory, then every theorem of $T$ is valid in $T$.
+\end{theorem}

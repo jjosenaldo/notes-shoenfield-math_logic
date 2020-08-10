@@ -1,0 +1,74 @@
+\section{Theorems in First-Order Theories}
+
+\subsection{The Tautology Theorem}
+
+\begin{definition}[Elementary Formula]
+	A formula is \emph{elementary} if it is either an atomic formula or an
+	instantiation.
+\end{definition}
+
+\begin{definition}[Truth Valuation]
+	A \emph{truth valuation} for a theory $T$ is a mapping 
+	from the set of elementary formulas in $T$ to $\set{\mtrue, \mfalse}$.
+	Truth valuations are extended to arbitrary formulas in the usual
+	manner.
+\end{definition}
+
+\begin{definition}[Tautological Consequence]
+	$\msynt B$ is a \emph{tautological consequence of} $\msynt A_1, \dots, \msynt A_n$
+	if $V(\msynt B)=\mtrue$ for every truth valuation $V$ such that
+	$V(\msynt A_1) = \dots = V(\msynt A_n) = \mtrue$.
+\end{definition}
+
+\begin{definition}[Tautology]
+	A formula is a \emph{tautology} if it is a logical consequence of the
+	empty set of formulas.
+\end{definition}
+
+\begin{fact}
+	$\msynt B$ is a tautological consequence of $\msynt A_1, \dots, \msynt A_n$ iff
+	$\msynt A_1 \to \dots \to \msynt A_n \to \msynt B$ is a tautology.
+\end{fact}
+
+From now on, formulas are considered to be in the set of formulas whose
+logical connectives are either $\lnot$ or $\lor$.
+
+\begin{fact}
+	Let $\msynt A_1, \dots, \msynt A_n$ be formulas.
+	 %whose logical connectives can only be $\lor$ or $\lnot$. 
+	 It can be determined in a finite number of steps
+	whether $\msynt A_1 \lor \dots \lor \msynt A_n$ is a tautology.
+\end{fact}
+
+\begin{theorem}[Tautology Theorem (Post)]
+	If \synt B is a tautological consequence of \synt A$_1$, \dots, 
+	\synt A$_n$ and $\thm \msynt A_1$, \dots, $\thm \msynt A_n$,
+	then $\thm \msynt B$.
+\end{theorem}
+
+\begin{corollary}
+	Every tautology is a theorem.
+\end{corollary}
+
+\begin{lemma}
+	If $\thm \msynt A \lor \msynt B$, then $\thm \msynt B \lor \msynt A$.
+\end{lemma}
+
+\begin{fact}
+	The detachment rule is admissible: %TODO: what's the right term for this?
+	\begin{description}
+		\item[Detachment Rule] If $\thm \msynt A \to \msynt B$ and 
+		$\thm \msynt A$, then $\thm \msynt B$.
+	\end{description}
+\end{fact}
+
+\begin{corollary}
+	If $\thm \msynt A_1$, \dots, $\thm \msynt A_n$ and
+	$\thm \msynt A_1\to \dots\to\msynt A_n\to\msynt B$, then
+	$\thm \msynt B$.
+\end{corollary}
+
+\begin{lemma}
+	If $n\ge 2$ and $\msynt A_1 \lor \dots \lor \msynt A_n$ is a tautology,
+	then $\thm \msynt A_1 \lor \dots \lor \msynt A_n$.
+\end{lemma}

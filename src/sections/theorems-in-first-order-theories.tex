@@ -72,3 +72,24 @@ logical connectives are either $\lnot$ or $\lor$.
 	If $n\ge 2$ and $\msynt A_1 \lor \dots \lor \msynt A_n$ is a tautology,
 	then $\thm \msynt A_1 \lor \dots \lor \msynt A_n$.
 \end{lemma}
+
+\begin{fact}
+	Suppose that it is associated to each formula \synt A a formula \synt A$^*$
+	such that $(\msynt A \lor \msynt B)^* = \msynt A^* \lor \msynt B^*$ and 
+	$(\lnot \msynt A)^* = \lnot (\msynt A^*)$. If \synt B is a tautological
+	consequence of $\msynt A_1, \dots, \msynt A_n$, then $\msynt B^*$ is a tautological
+	consequence of $\msynt A_1^*, \dots, \msynt A_n^*$.
+\end{fact}
+
+\begin{fact}[Induction on Theorems]
+	To prove that all theorems of $T$ have a property $P$, it suffices showing 
+	that:
+	\begin{enumerate}
+		\item every substitution axiom, identity axiom, equality axiom and nonlogical axiom
+		has property $P$,
+		\item if $\msynt A_1,\dots,\msynt A_n$ has property $P$ and \synt B is a tautological
+		consequence of $\msynt A_1,\dots,\msynt A_n$, then \synt B has the property $P$.
+		\item if \synt A has property $P$ and \synt B can be inferred from \synt A
+		by the $\exists$-introduction rule, then \synt B has property $P$.
+	\end{enumerate}
+\end{fact}

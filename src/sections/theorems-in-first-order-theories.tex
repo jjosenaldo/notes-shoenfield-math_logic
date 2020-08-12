@@ -31,7 +31,8 @@
 \end{fact}
 
 From now on, formulas are considered to be in the set of formulas whose
-logical connectives are either $\lnot$ or $\lor$.
+logical connectives are either $\lnot$ or $\lor$. 
+% Note that they do NOT contain the existential connective
 
 \begin{fact}
 	Let $\msynt A_1, \dots, \msynt A_n$ be formulas.
@@ -91,5 +92,6 @@ logical connectives are either $\lnot$ or $\lor$.
 		consequence of $\msynt A_1,\dots,\msynt A_n$, then \synt B has the property $P$.
 		\item if \synt A has property $P$ and \synt B can be inferred from \synt A
 		by the $\exists$-introduction rule, then \synt B has property $P$.
+		% Note that the tautology theorem only took care of the formulas w/o existentials
 	\end{enumerate}
 \end{fact}

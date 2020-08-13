@@ -95,3 +95,34 @@ logical connectives are either $\lnot$ or $\lor$.
 		% Note that the tautology theorem only took care of the formulas w/o existentials
 	\end{enumerate}
 \end{fact}
+
+\subsection{Results on Quantifiers}
+
+\begin{fact}
+	Here are some derivable rules on quantifiers:
+	\begin{description}
+		\item[$\forall$-Introduction Rule] If $\thm \msynt A \to \msynt B$ and
+		\synt x is not free in \synt A, then $\thm \msynt A \to \forall \msynt x \msynt B$.
+		\item[Generalization Rule] If $\thm \msynt A$, then $\thm \forall \msynt{xA}$.
+		\item[Substitution Rule] If $\thm \msynt A$ and $\msynt A'$ is an instance
+		of \synt A, then If $\thm \msynt A'$.
+		\item[Substitution Theorem] 
+		\begin{enumerate}
+			\item[]
+			\item $\thm \msubs{\msynt a_1,\dots,\msynt a_n}{\msynt x_1,\dots,\msynt x_n}{\msynt A}\to
+			\exists \msynt x_1\dots\msynt x_n\msynt A$
+			\item $\thm \forall \msynt x_1\dots\forall\msynt x_n\msynt A\to
+			\msubs{\msynt a_1,\dots,\msynt a_n}{\msynt x_1,\dots,\msynt x_n}{\msynt A}$	
+		\end{enumerate}
+		\item[Distribution Rule] If $\thm \msynt A \to \msynt B$, then
+		$\thm \exists \msynt{xA}\to\exists\msynt{xB}$ and
+		$\thm \forall \msynt{xA}\to\forall\msynt{xB}$
+		\item[Closure Theorem] If $\msynt A'$ is the closure of \synt A, then 
+		$\thm \msynt A'$ iff $\thm \msynt A$.
+	\end{description}
+\end{fact}
+
+\begin{corollary}
+	If $\msynt A'$ is the closure of \synt A, then \synt A is valid in a
+	structure $\struct$ iff $\msynt A'$ is valid in $\struct$.
+\end{corollary}

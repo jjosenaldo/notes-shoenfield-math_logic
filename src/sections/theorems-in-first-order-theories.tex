@@ -126,3 +126,31 @@ logical connectives are either $\lnot$ or $\lor$.
 	If $\msynt A'$ is the closure of \synt A, then \synt A is valid in a
 	structure $\struct$ iff $\msynt A'$ is valid in $\struct$.
 \end{corollary}
+
+\subsection{The Deduction Theorem}
+
+\begin{theorem}[Deduction Theorem]
+	Let \synt A be a closed formula in $T$. For every formula \synt B
+	of $T$, $\thm_T \msynt A\to\msynt B$ iff $\thm_{T[\msynt A]}\msynt B$.
+\end{theorem}
+
+\begin{corollary}
+	Let $\msynt A_1,\dots,\msynt A_n$ be closed formulas in $T$. For every
+	formula \synt B in $T$, $\thm_T\msynt A_1\to\dots\to\msynt A_n\to\msynt B$
+	iff $\thm_{T[\msynt A_1,\dots,\msynt A_n]}\msynt B$.
+\end{corollary}
+
+\begin{theorem}[Theorem on Constants]
+	Let $T'$ be obtained from $T$ by adding some new constants. Then for each formula
+	\synt A of $T$, and every sequence $\msynt e_1,\dots,\msynt e_n$ of new
+	constants, $\thm_T \msynt A$ iff
+	 $\thm_{T'} \msubs{\msynt e_1,\dots,\msynt e_n}{}{\msynt A}$.
+\end{theorem}
+
+\begin{fact}
+	Let \synt A and \synt B be formulas of $T$, and let $\msynt x_1,\dots,\msynt x_n$
+	be all the free variables in \synt A. Form $T'$ from $T$ by adding new constants
+	$\msynt e_1,\dots,\msynt e_n$. Then
+	\[\thm_T \msynt A\to\msynt B \tiff \thm_{T'[\msubs{\msynt e_1,\dots,\msynt e_n}{}{\msynt A}]}
+	\msubs{\msynt e_1,\dots,\msynt e_n}{}{\msynt B}\]
+\end{fact}
